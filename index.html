@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- EDIT: your name -->
-<title>John Surname — CV</title>
+<title>John Ng — CV</title>
 <meta name="description" content="Curriculum vitae — Platform & Integration Engineer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,24 +122,19 @@
 
     <!-- ===== MASTHEAD ===== -->
     <header class="masthead">
-      <!-- EDIT: name -->
-      <h1>John Surname</h1>
-      <p class="role">Senior Platform &amp; Integration Engineer</p>
+      <h1>John NG</h1>
+      <p class="role">Senior Platform Analyst &amp; Developer, ESP</p>
       <div class="contact">
-        <!-- EDIT: all contact details -->
         <span>Adelaide, SA · open to remote</span>
-        <a href="mailto:you@example.com">you@example.com</a>
-        <a href="https://www.linkedin.com/in/your-handle">linkedin.com/in/your-handle</a>
-        <a href="https://github.com/your-handle">github.com/your-handle</a>
+        <a href="mailto:hanzongng@gmail.com">hanzongng@gmail.com</a>
+        <a href="https://www.linkedin.com/in/hanzong-ng/">linkedin.com/in/hanzong-ng/</a>
+        <a href="https://github.com/nhzong">github.com/nhzong</a>
       </div>
     </header>
 
     <!-- ===== SUMMARY ===== -->
     <p class="summary">
-      Platform and integration engineer with around 6.5 years building and owning the systems that connect
-      enterprise platforms. Sole architect of a bidirectional ETL platform integrating a learning-management
-      system with student-records, ERP and identity systems. Strong on data reconciliation, API integration,
-      and designing systems that degrade gracefully when the platforms they depend on don't.
+      Platform and integration engineer with around 6.5 years building the systems that connect enterprise platforms. Primary developer of an in-house integration layer linking a learning-management system to the curriculum, student-records and identity systems around it — holding the business logic and admin tooling those systems don't provide. Background spanning full-stack development, API integration and IT infrastructure.
     </p>
 
     <div class="grid">
@@ -148,33 +143,51 @@
         <section class="block">
           <h2>Experience</h2>
 
-          <!-- EDIT dates and add quantified outcomes where you can -->
           <article class="entry">
             <div class="top">
               <h3>Senior Platform Analyst &amp; Developer, <span class="org">Flinders University</span></h3>
-              <span class="when">Mon YYYY – Present</span>
+              <span class="when">March 2024 – Present</span>
             </div>
             <ul>
-              <li>Sole architect and owner of Canvas Middleware — a Django-based bidirectional integration platform connecting the LMS to the surrounding student-records, ERP and identity systems.</li>
-              <li>Designed incremental sync, transformation, reconciliation and write-back logic resilient to slow, changing or unavailable upstream vendor APIs.</li>
-              <li>Built data pipelines that validate source-of-truth inputs, classify mappings, and generate load files with no-op suppression to keep writes safe and minimal.</li>
-              <li><!-- EDIT: add an outcome with a number — records processed, hours saved, error rate reduced, systems integrated. --></li>
+              <li>Primary developer of Canvas Middleware — built the majority of the system, contributed to its major architectural decisions, and act as the team's main subject-matter expert on it. A Django application that sits between Canvas and its upstream systems, holding the university-specific business logic that Canvas and the vendor integrations don't provide.</li>
+              <li>Integrated curriculum data (CourseLoop), student data (TechnologyOne) and identity data (SailPoint), all delivered via Dell Boomi, and pushed the resulting changes to Canvas through its API.</li>
+              <li>Implemented shared-course creation — merging multiple course offerings into a single Canvas course — and cohort management that groups students and staff by attributes such as role and degree and auto-enrols them into non-teaching compliance courses (academic integrity, cybersecurity, WHS).</li>
+              <li>Built the admin UI that lets the Learning &amp; Teaching Innovation team run these scenarios themselves, removing the need for developer involvement in day-to-day operations.</li>
+              <li>Analysed and implemented mitigation work for openEquella, and regression-tested vendor changes from TechnologyOne, CourseLoop and Canvas before they reached production.</li>
+              <li>Provided technical support for API usage across the team's platforms.</li>
             </ul>
           </article>
 
-          <!-- EDIT: add prior roles. Duplicate this block per role. -->
           <article class="entry">
             <div class="top">
-              <h3>Previous Role, <span class="org">Employer</span></h3>
-              <span class="when">Mon YYYY – Mon YYYY</span>
+              <h3>IT Programmer, <span class="org">Haese Mathematics</span></h3>
+              <span class="when">May 2020 – March 2024</span>
             </div>
             <ul>
-              <li><!-- EDIT: what you owned and what changed because of it --></li>
-              <li><!-- EDIT --></li>
+              <li>Full-stack developer on an interactive textbook-delivery platform (Ruby on Rails) used by schools, teachers and students — serving textbook content, interactive games and voice-over videos.</li>
+              <li>Built the school-administration side: role-based access for students and teachers, per-title content entitlements, and additional-license purchasing.</li>
+              <li>Implemented API integration with third-party resellers who bulk-purchase titles, provisioning the digital licences bundled with them.</li>
+              <li>Developed small React apps delivering the platform's interactive educational games.</li>
+              <li>Redesigned the company's IT infrastructure after completing the employer-sponsored Google IT Support Professional Certificate: rebuilt the server rack and cabling, created an asset registry, and ran endpoint antivirus and patching, backup-and-recovery and security-incident planning.</li>
+              <li>Administered Zentyal servers on Ubuntu and the building's firewall, VPN, internet and wireless networks.</li>
+              <li>Began in front-end development (JavaScript / CSS) and producing mathematics educational content with Adobe Animate.</li>
+            </ul>
+          </article>
+
+          <article class="entry">
+            <div class="top">
+              <h3>Graduate Software Developer, <span class="org">Dynamic Creative</span></h3>
+              <span class="when">January 2020 – April 2024</span>
+            </div>
+            <ul>
+              <li>Started in a customer-success / L2-support capacity: onboarded new customers and kept their live services to standard on the company's digital-marketing platform — dynamic-keyword Google Ads and SEO for Shopify and Magento merchants.</li>
+              <li>Moved onto backend feature development (Ruby on Rails + React): built a reporting feature that consumed a large API dataset, sanitised and grouped it, and generated insights on which keywords performed best across customer demographics.</li>
+              <li>Role made redundant amid the COVID-19 downturn (April 2020).</li>
             </ul>
           </article>
         </section>
 
+        <!--
         <section class="block">
           <h2>Selected projects</h2>
 
@@ -197,6 +210,7 @@
           </article>
         </section>
       </div>
+      -->
 
       <!-- ===== SIDEBAR ===== -->
       <aside class="side">
@@ -204,8 +218,8 @@
           <h2>Skills</h2>
           <!-- EDIT: trim to what's true and current -->
           <ul class="skills">
-            <li><span class="k">Languages</span><span class="v">Python, SQL, JavaScript</span></li>
-            <li><span class="k">Frameworks</span><span class="v">Django, pandas</span></li>
+            <li><span class="k">Languages</span><span class="v">Python, Ruby, PHP, C#, ReactJS, JavaScript, jQuery, CSS, SQL</span></li>
+            <li><span class="k">Frameworks</span><span class="v">Django, Ruby-on-Rails, CodeIgniter</span></li>
             <li><span class="k">Integration &amp; data</span><span class="v">REST APIs, ETL, data reconciliation, incremental / CDC-style sync</span></li>
             <li><span class="k">Practices</span><span class="v">System design, idempotent write-back, contract testing, CI</span></li>
           </ul>
@@ -216,7 +230,7 @@
           <p style="margin:0;">
             <span class="deg">B.Sc. Computer Science</span><br>
             <span class="school">Software Development · Swinburne University of Technology</span><br>
-            <span class="when"><!-- EDIT: grad year --></span>
+            <span class="when">2019</span>
           </p>
         </section>
 
