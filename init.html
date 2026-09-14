@@ -1,1 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- EDIT: your name -->
+<title>John Surname — CV</title>
+<meta name="description" content="Curriculum vitae — Platform & Integration Engineer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #EFE7D8;
+    --surface:   #F7F2E8;
+    --ink:       #2E2A22;
+    --muted:     #6F6555;
+    --line:      #DFD4BF;
+    --line-soft: #E7DECB;
+    --accent:    #6B7A52;
+    --accent-ink:#54633E;
+    --source:    #A8794E;
+    --focus:     #1f6feb;
+    --maxw: 60rem;
+  }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#21201B; --surface:#2A2820; --ink:#EDE6D6; --muted:#A99E89;
+      --line:#3A362C; --line-soft:#322E26; --accent:#9DB07C; --accent-ink:#B0C08F;
+      --source:#C79B6E; --focus:#6cb0ff;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
+    font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: var(--maxw); margin-inline: auto;
+    padding: clamp(1.5rem, 5vw, 3.5rem);
+  }
+
+  a { color: var(--accent-ink); text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; }
+
+  /* ---------- masthead ---------- */
+  .masthead { border-bottom: 2px solid var(--accent); padding-bottom: 1.4rem; margin-bottom: 2rem; }
+  .masthead h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 600; letter-spacing: -0.015em; margin: 0; }
+  .masthead .role { color: var(--source); font-weight: 700; font-size: 1.05rem; margin: 0.3rem 0 0; }
+  .masthead .contact {
+    display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem;
+    margin-top: 1rem; color: var(--muted); font-size: 0.92rem;
+  }
+  .masthead .contact a { color: var(--muted); text-decoration: none; }
+  .masthead .contact a:hover { color: var(--ink); text-decoration: underline; }
+
+  /* ---------- layout ---------- */
+  .grid { display: grid; grid-template-columns: 1fr 15rem; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+
+  .summary { color: var(--ink); max-width: 62ch; margin: 0 0 2rem; }
+
+  .block { margin-bottom: 2.2rem; }
+  .block > h2 {
+    font-size: 1.15rem; font-weight: 600; margin: 0 0 1.1rem;
+    padding-bottom: 0.4rem; border-bottom: 1px solid var(--line);
+  }
+
+  /* experience entries */
+  .entry { margin-bottom: 1.6rem; }
+  .entry .top { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
+  .entry h3 { font-size: 1.12rem; font-weight: 600; margin: 0; }
+  .entry .org { color: var(--source); font-weight: 700; }
+  .entry .when { color: var(--muted); font-size: 0.88rem; white-space: nowrap; }
+  .entry ul { margin: 0.6rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+  .entry li { margin-bottom: 0.35rem; max-width: 66ch; }
+  .entry li::marker { color: var(--accent); }
+
+  /* sidebar */
+  .side .block > h2 { font-size: 1rem; }
+  .skills { list-style: none; margin: 0; padding: 0; }
+  .skills li { margin-bottom: 0.9rem; }
+  .skills .k { display: block; font-weight: 700; color: var(--ink); font-size: 0.9rem; }
+  .skills .v { color: var(--muted); font-size: 0.9rem; }
+
+  .edu .deg { font-weight: 700; }
+  .edu .school, .edu .when { color: var(--muted); font-size: 0.9rem; }
+
+  .lang { color: var(--muted); font-size: 0.9rem; }
+  .lang strong { color: var(--ink); font-weight: 700; }
+
+  footer { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line-soft); color: var(--muted); font-size: 0.85rem; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- print ---------- */
+  @media print {
+    :root {
+      --bg:#fff; --surface:#fff; --ink:#1c1a15; --muted:#444;
+      --line:#ccc; --line-soft:#ddd; --accent:#5a6a44; --accent-ink:#40502e; --source:#8a5f36;
+    }
+    body { font-size: 11pt; }
+    .sheet { max-width: none; padding: 0; }
+    a { color: var(--ink); text-decoration: none; }
+    .entry, .block { break-inside: avoid; }
+    footer { display: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+
+    <!-- ===== MASTHEAD ===== -->
+    <header class="masthead">
+      <!-- EDIT: name -->
+      <h1>John Surname</h1>
+      <p class="role">Senior Platform &amp; Integration Engineer</p>
+      <div class="contact">
+        <!-- EDIT: all contact details -->
+        <span>Adelaide, SA · open to remote</span>
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://www.linkedin.com/in/your-handle">linkedin.com/in/your-handle</a>
+        <a href="https://github.com/your-handle">github.com/your-handle</a>
+      </div>
+    </header>
+
+    <!-- ===== SUMMARY ===== -->
+    <p class="summary">
+      Platform and integration engineer with around 6.5 years building and owning the systems that connect
+      enterprise platforms. Sole architect of a bidirectional ETL platform integrating a learning-management
+      system with student-records, ERP and identity systems. Strong on data reconciliation, API integration,
+      and designing systems that degrade gracefully when the platforms they depend on don't.
+    </p>
+
+    <div class="grid">
+      <!-- ===== MAIN COLUMN ===== -->
+      <div class="main">
+        <section class="block">
+          <h2>Experience</h2>
+
+          <!-- EDIT dates and add quantified outcomes where you can -->
+          <article class="entry">
+            <div class="top">
+              <h3>Senior Platform Analyst &amp; Developer, <span class="org">Flinders University</span></h3>
+              <span class="when">Mon YYYY – Present</span>
+            </div>
+            <ul>
+              <li>Sole architect and owner of Canvas Middleware — a Django-based bidirectional integration platform connecting the LMS to the surrounding student-records, ERP and identity systems.</li>
+              <li>Designed incremental sync, transformation, reconciliation and write-back logic resilient to slow, changing or unavailable upstream vendor APIs.</li>
+              <li>Built data pipelines that validate source-of-truth inputs, classify mappings, and generate load files with no-op suppression to keep writes safe and minimal.</li>
+              <li><!-- EDIT: add an outcome with a number — records processed, hours saved, error rate reduced, systems integrated. --></li>
+            </ul>
+          </article>
+
+          <!-- EDIT: add prior roles. Duplicate this block per role. -->
+          <article class="entry">
+            <div class="top">
+              <h3>Previous Role, <span class="org">Employer</span></h3>
+              <span class="when">Mon YYYY – Mon YYYY</span>
+            </div>
+            <ul>
+              <li><!-- EDIT: what you owned and what changed because of it --></li>
+              <li><!-- EDIT --></li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="block">
+          <h2>Selected projects</h2>
+
+          <article class="entry">
+            <div class="top">
+              <h3>Delivery-responsibility reconciliation pipeline</h3>
+            </div>
+            <ul>
+              <li>Validates a source-of-truth promulgation, classifies each mapping (one-to-one through many-to-many), and emits create / update / delete load files. Halts on invalid input and suppresses redundant writes.</li>
+            </ul>
+          </article>
+
+          <article class="entry">
+            <div class="top">
+              <h3>Mark-scheme grader (IGCSE / A-Level)</h3>
+            </div>
+            <ul>
+              <li>Side project: an EdTech tool that grades responses against official mark schemes — a focused wedge into a specific marking workflow rather than a general assistant.</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="side">
+        <section class="block">
+          <h2>Skills</h2>
+          <!-- EDIT: trim to what's true and current -->
+          <ul class="skills">
+            <li><span class="k">Languages</span><span class="v">Python, SQL, JavaScript</span></li>
+            <li><span class="k">Frameworks</span><span class="v">Django, pandas</span></li>
+            <li><span class="k">Integration &amp; data</span><span class="v">REST APIs, ETL, data reconciliation, incremental / CDC-style sync</span></li>
+            <li><span class="k">Practices</span><span class="v">System design, idempotent write-back, contract testing, CI</span></li>
+          </ul>
+        </section>
+
+        <section class="block edu">
+          <h2>Education</h2>
+          <p style="margin:0;">
+            <span class="deg">B.Sc. Computer Science</span><br>
+            <span class="school">Software Development · Swinburne University of Technology</span><br>
+            <span class="when"><!-- EDIT: grad year --></span>
+          </p>
+        </section>
+
+        <section class="block">
+          <h2>Languages</h2>
+          <p class="lang">
+            <strong>English</strong> — native<br>
+            <strong>Mandarin Chinese</strong> — native<br>
+            <strong>Malay</strong> — working
+          </p>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      Tip: use your browser's Print → Save as PDF for a clean copy. This page is styled for print.
+    </footer>
+  </div>
+</body>
+</html>
