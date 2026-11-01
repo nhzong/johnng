@@ -1,242 +1,307 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-AU">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- EDIT: your name -->
-<title>John Ng — CV</title>
-<meta name="description" content="Curriculum vitae — Platform & Integration Engineer.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John Ng · Platform Developer</title>
+<meta name="description" content="John Ng (吴) — senior platform developer in Adelaide. Integrations, Django and Rails, and the systems that keep learning platforms running.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:        #EFE7D8;
-    --surface:   #F7F2E8;
-    --ink:       #2E2A22;
-    --muted:     #6F6555;
-    --line:      #DFD4BF;
-    --line-soft: #E7DECB;
-    --accent:    #6B7A52;
-    --accent-ink:#54633E;
-    --source:    #A8794E;
-    --focus:     #1f6feb;
-    --maxw: 60rem;
+:root{
+  --paper:#EDF1F4;
+  --panel:#FFFFFF;
+  --ink:#16212C;
+  --slate:#566676;
+  --rule:#C7D1DA;
+  --seal:#B0342A;
+  --wire:#7E93A6;
+  --font:"Schibsted Grotesk", system-ui, sans-serif;
+  --han:"Noto Serif SC", "Songti SC", serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121A22; --panel:#18222C; --ink:#E4EAF0; --slate:#9AAAB9;
+    --rule:#2D3B48; --seal:#D4554A; --wire:#5F7488;
   }
+}
+:root[data-theme="dark"]{
+  --paper:#121A22; --panel:#18222C; --ink:#E4EAF0; --slate:#9AAAB9;
+  --rule:#2D3B48; --seal:#D4554A; --wire:#5F7488;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--seal);text-underline-offset:3px;text-decoration-thickness:2px}
+a:hover{color:var(--seal)}
+:focus-visible{outline:3px solid var(--seal);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg:#21201B; --surface:#2A2820; --ink:#EDE6D6; --muted:#A99E89;
-      --line:#3A362C; --line-soft:#322E26; --accent:#9DB07C; --accent-ink:#B0C08F;
-      --source:#C79B6E; --focus:#6cb0ff;
-    }
-  }
+/* top bar */
+.bar{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:15px}
+.bar nav{display:flex;gap:22px;flex-wrap:wrap}
+.bar nav a{text-decoration:none;color:var(--slate)}
+.bar nav a:hover{color:var(--ink)}
+.mini-seal{display:inline-grid;place-items:center;width:34px;height:34px;background:var(--seal);color:#fff;font:700 20px/1 var(--han);border-radius:4px}
+@media (max-width:600px){.bar nav{gap:14px;font-size:14px}}
 
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+/* hero */
+.hero{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;padding:56px 0 28px}
+.hero h1{font-size:clamp(44px,8vw,88px);line-height:.95;font-weight:800;letter-spacing:-.035em;margin:0}
+.hero p.lede{font-size:clamp(19px,2.4vw,23px);line-height:1.45;max-width:34ch;margin:22px 0 0;color:var(--ink)}
+.hero p.where{color:var(--slate);margin:12px 0 0;font-size:15px}
+.seal{width:150px;height:150px;background:var(--seal);color:#fff;display:grid;place-items:center;border-radius:10px;font:700 104px/1 var(--han);box-shadow:inset 0 0 0 5px var(--seal),inset 0 0 0 8px rgba(255,255,255,.85);transform:rotate(-3deg)}
+@media (max-width:700px){.hero{grid-template-columns:1fr}.seal{width:96px;height:96px;font-size:66px;order:-1}}
 
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
-    font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
-  }
+/* integration diagram */
+.flow{margin:28px 0 0;background:var(--panel);border:1px solid var(--rule);border-radius:14px;padding:22px 22px 14px}
+.flow figcaption{font-size:14px;color:var(--slate);margin-top:8px}
+.flow svg{width:100%;height:auto;display:block}
+.flow .node rect{fill:var(--paper);stroke:var(--rule)}
+.flow .node text{fill:var(--ink);font:500 15px var(--font)}
+.flow .node.core rect{fill:var(--ink);stroke:var(--ink)}
+.flow .node.core text{fill:var(--paper);font-weight:700}
+.flow .node.dest rect{fill:none;stroke:var(--seal);stroke-width:2}
+.flow .wire{fill:none;stroke:var(--wire);stroke-width:1.5}
+.flow .pulse{fill:none;stroke:var(--seal);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:14 400;stroke-dashoffset:414;animation:run 3.2s cubic-bezier(.5,0,.5,1) infinite}
+.flow .pulse.d2{animation-delay:.35s}.flow .pulse.d3{animation-delay:.7s}
+@keyframes run{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.flow .pulse{animation:none;stroke-dasharray:none;stroke-dashoffset:0;opacity:.6}}
 
-  .sheet {
-    max-width: var(--maxw); margin-inline: auto;
-    padding: clamp(1.5rem, 5vw, 3.5rem);
-  }
+/* sections */
+section{padding:72px 0 0}
+section > h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;line-height:1.1;margin:0 0 28px;font-weight:800}
+.two{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px}
+@media (max-width:800px){.two{grid-template-columns:1fr;gap:28px}}
+.prose p{margin:0 0 1em;max-width:62ch}
+.facts{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.facts span:first-child{color:var(--slate)}
+.facts span:last-child{text-align:right}
 
-  a { color: var(--accent-ink); text-underline-offset: 3px; }
-  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+/* experience timeline */
+.roles{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule);margin-left:6px}
+.role{position:relative;padding:0 0 44px 32px}
+.role::before{content:"";position:absolute;left:-8px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--wire)}
+.role.now::before{background:var(--seal);border-color:var(--seal)}
+.role header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;align-items:baseline}
+.role h3{margin:0;font-size:22px;letter-spacing:-.01em}
+.role .when{color:var(--slate);font-size:15px;white-space:nowrap}
+.role .org{margin:2px 0 12px;font-weight:500}
+.role ul{margin:0;padding-left:1.1em;max-width:66ch}
+.role li{margin:0 0 .45em}
+.role li::marker{color:var(--seal)}
 
-  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; }
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:760px){.projects{grid-template-columns:1fr}}
+.proj{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:24px;display:flex;flex-direction:column}
+.proj.lead{grid-column:1 / -1;border-left:6px solid var(--seal)}
+.proj h3{margin:0 0 4px;font-size:21px;letter-spacing:-.01em}
+.proj .ctx{color:var(--slate);font-size:15px;margin:0 0 12px}
+.proj p{margin:0 0 12px;max-width:68ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding:0;list-style:none}
+.tags li{font-size:13px;padding:3px 10px;border-radius:99px;border:1px solid var(--rule);color:var(--slate)}
+.status{display:inline-block;font-size:13px;font-weight:500;color:var(--seal);margin-bottom:8px}
 
-  /* ---------- masthead ---------- */
-  .masthead { border-bottom: 2px solid var(--accent); padding-bottom: 1.4rem; margin-bottom: 2rem; }
-  .masthead h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 600; letter-spacing: -0.015em; margin: 0; }
-  .masthead .role { color: var(--source); font-weight: 700; font-size: 1.05rem; margin: 0.3rem 0 0; }
-  .masthead .contact {
-    display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem;
-    margin-top: 1rem; color: var(--muted); font-size: 0.92rem;
-  }
-  .masthead .contact a { color: var(--muted); text-decoration: none; }
-  .masthead .contact a:hover { color: var(--ink); text-decoration: underline; }
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+@media (max-width:860px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.skills{grid-template-columns:1fr}}
+.skills h3{font-size:16px;margin:0 0 10px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.skills ul{list-style:none;margin:0;padding:0;font-size:15px}
+.skills li{padding:3px 0}
 
-  /* ---------- layout ---------- */
-  .grid { display: grid; grid-template-columns: 1fr 15rem; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+/* contact */
+.contact{margin-top:72px;background:var(--ink);color:var(--paper);border-radius:16px;padding:48px 40px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px}
+.contact h2{color:var(--paper);margin:0 0 14px;font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;line-height:1.1}
+.contact p{margin:0 0 1em;max-width:52ch;opacity:.9}
+.contact ul{list-style:none;margin:0;padding:0}
+.contact li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.18);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.contact li span{opacity:.7;font-size:15px}
+.contact a{color:var(--paper);font-weight:500;overflow-wrap:anywhere}
+.contact a:hover{color:#fff}
+.btn{display:inline-block;margin-top:8px;background:var(--seal);color:#fff !important;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:700}
+.btn:hover{filter:brightness(1.1)}
+@media (max-width:760px){.contact{grid-template-columns:1fr;padding:32px 22px;gap:24px}}
 
-  .summary { color: var(--ink); max-width: 62ch; margin: 0 0 2rem; }
-
-  .block { margin-bottom: 2.2rem; }
-  .block > h2 {
-    font-size: 1.15rem; font-weight: 600; margin: 0 0 1.1rem;
-    padding-bottom: 0.4rem; border-bottom: 1px solid var(--line);
-  }
-
-  /* experience entries */
-  .entry { margin-bottom: 1.6rem; }
-  .entry .top { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
-  .entry h3 { font-size: 1.12rem; font-weight: 600; margin: 0; }
-  .entry .org { color: var(--source); font-weight: 700; }
-  .entry .when { color: var(--muted); font-size: 0.88rem; white-space: nowrap; }
-  .entry ul { margin: 0.6rem 0 0; padding-left: 1.1rem; color: var(--muted); }
-  .entry li { margin-bottom: 0.35rem; max-width: 66ch; }
-  .entry li::marker { color: var(--accent); }
-
-  /* sidebar */
-  .side .block > h2 { font-size: 1rem; }
-  .skills { list-style: none; margin: 0; padding: 0; }
-  .skills li { margin-bottom: 0.9rem; }
-  .skills .k { display: block; font-weight: 700; color: var(--ink); font-size: 0.9rem; }
-  .skills .v { color: var(--muted); font-size: 0.9rem; }
-
-  .edu .deg { font-weight: 700; }
-  .edu .school, .edu .when { color: var(--muted); font-size: 0.9rem; }
-
-  .lang { color: var(--muted); font-size: 0.9rem; }
-  .lang strong { color: var(--ink); font-weight: 700; }
-
-  footer { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line-soft); color: var(--muted); font-size: 0.85rem; }
-
-  /* ---------- responsive ---------- */
-  @media (max-width: 720px) {
-    .grid { grid-template-columns: 1fr; }
-  }
-
-  /* ---------- print ---------- */
-  @media print {
-    :root {
-      --bg:#fff; --surface:#fff; --ink:#1c1a15; --muted:#444;
-      --line:#ccc; --line-soft:#ddd; --accent:#5a6a44; --accent-ink:#40502e; --source:#8a5f36;
-    }
-    body { font-size: 11pt; }
-    .sheet { max-width: none; padding: 0; }
-    a { color: var(--ink); text-decoration: none; }
-    .entry, .block { break-inside: avoid; }
-    footer { display: none; }
-  }
+footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 </style>
 </head>
 <body>
-  <div class="sheet">
+<div class="wrap">
 
-    <!-- ===== MASTHEAD ===== -->
-    <header class="masthead">
-      <h1>John NG</h1>
-      <p class="role">Senior Platform Analyst &amp; Developer, ESP</p>
-      <div class="contact">
-        <span>Adelaide, SA · open to remote</span>
-        <a href="mailto:hanzongng@gmail.com">hanzongng@gmail.com</a>
-        <a href="https://www.linkedin.com/in/hanzong-ng/">linkedin.com/in/hanzong-ng/</a>
-        <a href="https://github.com/nhzong">github.com/nhzong</a>
-      </div>
-    </header>
-
-    <!-- ===== SUMMARY ===== -->
-    <p class="summary">
-      Platform and integration engineer with around 6.5 years building the systems that connect enterprise platforms. Primary developer of an in-house integration layer linking a learning-management system to the curriculum, student-records and identity systems around it — holding the business logic and admin tooling those systems don't provide. Background spanning full-stack development, API integration and IT infrastructure.
-    </p>
-
-    <div class="grid">
-      <!-- ===== MAIN COLUMN ===== -->
-      <div class="main">
-        <section class="block">
-          <h2>Experience</h2>
-
-          <article class="entry">
-            <div class="top">
-              <h3>Senior Platform Analyst &amp; Developer, <span class="org">Flinders University</span></h3>
-              <span class="when">March 2024 – Present</span>
-            </div>
-            <ul>
-              <li>Primary developer of Canvas Middleware — built the majority of the system, contributed to its major architectural decisions, and act as the team's main subject-matter expert on it. A Django application that sits between Canvas and its upstream systems, holding the university-specific business logic that Canvas and the vendor integrations don't provide.</li>
-              <li>Integrated curriculum data (CourseLoop), student data (TechnologyOne) and identity data (SailPoint), all delivered via Dell Boomi, and pushed the resulting changes to Canvas through its API.</li>
-              <li>Implemented shared-course creation — merging multiple course offerings into a single Canvas course — and cohort management that groups students and staff by attributes such as role and degree and auto-enrols them into non-teaching compliance courses (academic integrity, cybersecurity, WHS).</li>
-              <li>Built the admin UI that lets the Learning &amp; Teaching Innovation team run these scenarios themselves, removing the need for developer involvement in day-to-day operations.</li>
-              <li>Analysed and implemented mitigation work for openEquella, and regression-tested vendor changes from TechnologyOne, CourseLoop and Canvas before they reached production.</li>
-              <li>Provided technical support for API usage across the team's platforms.</li>
-            </ul>
-          </article>
-
-          <article class="entry">
-            <div class="top">
-              <h3>IT Programmer, <span class="org">Haese Mathematics</span></h3>
-              <span class="when">May 2020 – March 2024</span>
-            </div>
-            <ul>
-              <li>Full-stack developer on an interactive textbook-delivery platform (Ruby on Rails) used by schools, teachers and students — serving textbook content, interactive games and voice-over videos.</li>
-              <li>Built the school-administration side: role-based access for students and teachers, per-title content entitlements, and additional-license purchasing.</li>
-              <li>Implemented API integration with third-party resellers who bulk-purchase titles, provisioning the digital licences bundled with them.</li>
-              <li>Developed small React apps delivering the platform's interactive educational games.</li>
-              <li>Redesigned the company's IT infrastructure after completing the employer-sponsored Google IT Support Professional Certificate: rebuilt the server rack and cabling, created an asset registry, and ran endpoint antivirus and patching, backup-and-recovery and security-incident planning.</li>
-              <li>Administered Zentyal servers on Ubuntu and the building's firewall, VPN, internet and wireless networks.</li>
-              <li>Began in front-end development (JavaScript / CSS) and producing mathematics educational content with Adobe Animate.</li>
-            </ul>
-          </article>
-
-          <article class="entry">
-            <div class="top">
-              <h3>Graduate Software Developer, <span class="org">Dynamic Creative</span></h3>
-              <span class="when">January 2020 – April 2024</span>
-            </div>
-            <ul>
-              <li>Started in a customer-success / L2-support capacity: onboarded new customers and kept their live services to standard on the company's digital-marketing platform — dynamic-keyword Google Ads and SEO for Shopify and Magento merchants.</li>
-              <li>Moved onto backend feature development (Ruby on Rails + React): built a reporting feature that consumed a large API dataset, sanitised and grouped it, and generated insights on which keywords performed best across customer demographics.</li>
-              <li>Role made redundant amid the COVID-19 downturn (April 2020).</li>
-            </ul>
-          </article>
-        </section>
-
-        <section class="block">
-          <h2>Selected projects</h2>
-
-          <article class="entry">
-            <div class="top">
-              <h3>Delivery-responsibility reconciliation pipeline</h3>
-            </div>
-            <ul>
-              <li>Validates a source-of-truth promulgation, classifies each mapping (one-to-one through many-to-many), and emits create / update / delete load files. Halts on invalid input and suppresses redundant writes.</li>
-            </ul>
-          </article>
-        </section>
-      </div>
-
-      <!-- ===== SIDEBAR ===== -->
-      <aside class="side">
-        <section class="block">
-          <h2>Skills</h2>
-          <!-- EDIT: trim to what's true and current -->
-          <ul class="skills">
-            <li><span class="k">Languages</span><span class="v">Python, Ruby, PHP, C#, ReactJS, JavaScript, jQuery, CSS, SQL</span></li>
-            <li><span class="k">Frameworks</span><span class="v">Django, Ruby-on-Rails, CodeIgniter</span></li>
-            <li><span class="k">Integration &amp; data</span><span class="v">REST APIs, ETL, data reconciliation, incremental / CDC-style sync</span></li>
-            <li><span class="k">Practices</span><span class="v">System design, idempotent write-back, contract testing, CI</span></li>
-          </ul>
-        </section>
-
-        <section class="block edu">
-          <h2>Education</h2>
-          <p style="margin:0;">
-            <span class="deg">B.Sc. Computer Science</span><br>
-            <span class="school">Software Development · Swinburne University of Technology</span><br>
-            <span class="when">2019</span>
-          </p>
-        </section>
-
-        <section class="block">
-          <h2>Languages</h2>
-          <p class="lang">
-            <strong>English</strong> — native<br>
-            <strong>Mandarin Chinese</strong> — native<br>
-            <strong>Malay</strong> — working
-          </p>
-        </section>
-      </aside>
-    </div>
-
-    <footer>
-      Tip: use your browser's Print → Save as PDF for a clean copy. This page is styled for print.
-    </footer>
+  <div class="bar">
+    <a href="#top" class="mini-seal" aria-label="John Ng, back to top" style="text-decoration:none;color:#fff">吴</a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
+
+  <header class="hero" id="top">
+    <div>
+      <h1>John Ng</h1>
+      <p class="lede">I build the integrations and platform code that keep a university's learning systems talking to each other.</p>
+      <p class="where">Senior platform developer in Adelaide, South Australia. Open to remote roles and freelance work.</p>
+    </div>
+    <div class="seal" role="img" aria-label="吴, the Chinese character for Ng">吴</div>
+  </header>
+
+  <figure class="flow">
+    <svg viewBox="0 0 960 250" role="img" aria-labelledby="flowTitle">
+      <title id="flowTitle">Student, course and staff data flows from CourseLoop, TechnologyOne and SailPoint through Dell Boomi into the Canvas Middleware, which applies university rules and updates Canvas LMS.</title>
+      <!-- wires -->
+      <path class="wire" d="M180 45 C 230 45, 240 125, 290 125"/>
+      <path class="wire" d="M180 125 L 290 125"/>
+      <path class="wire" d="M180 205 C 230 205, 240 125, 290 125"/>
+      <path class="wire" d="M420 125 L 520 125"/>
+      <path class="wire" d="M740 125 L 820 125"/>
+      <!-- pulses -->
+      <path class="pulse" d="M180 45 C 230 45, 240 125, 290 125 L 420 125 L 520 125 L 740 125 L 820 125"/>
+      <path class="pulse d2" d="M180 125 L 290 125 L 420 125 L 520 125 L 740 125 L 820 125"/>
+      <path class="pulse d3" d="M180 205 C 230 205, 240 125, 290 125 L 420 125 L 520 125 L 740 125 L 820 125"/>
+      <!-- nodes -->
+      <g class="node"><rect x="10" y="22" width="170" height="46" rx="8"/><text x="95" y="51" text-anchor="middle">CourseLoop</text></g>
+      <g class="node"><rect x="10" y="102" width="170" height="46" rx="8"/><text x="95" y="131" text-anchor="middle">TechnologyOne</text></g>
+      <g class="node"><rect x="10" y="182" width="170" height="46" rx="8"/><text x="95" y="211" text-anchor="middle">SailPoint</text></g>
+      <g class="node"><rect x="290" y="102" width="130" height="46" rx="8"/><text x="355" y="131" text-anchor="middle">Dell Boomi</text></g>
+      <g class="node core"><rect x="520" y="94" width="220" height="62" rx="10"/><text x="630" y="131" text-anchor="middle">Canvas Middleware</text></g>
+      <g class="node dest"><rect x="820" y="102" width="130" height="46" rx="8"/><text x="885" y="131" text-anchor="middle">Canvas LMS</text></g>
+    </svg>
+    <figcaption>The pipeline I spend most of my days in at Flinders University. The dark box is the part I built.</figcaption>
+  </figure>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="two">
+      <div class="prose">
+        <p>I'm a software developer with about six and a half years of commercial experience, most of it in education technology. Today I work on the Education Success Platform team at Flinders University, where I'm the go-to person for the Django service that turns enrolment, course and identity data into a working Canvas LMS.</p>
+        <p>Before that I spent nearly four years at a small mathematics publisher doing a bit of everything: building a Rails textbook platform and React learning games, and running the company's network and servers. That mix shaped how I work. I'm comfortable in the code, in the database and in the server room, and I like owning a system end to end.</p>
+        <p>I'm Malaysian, and I speak English, Mandarin and Malay. Outside work you'll find me reading East Asian history, cooking, or doing DIY on a 1970s double-brick unit.</p>
+      </div>
+      <ul class="facts">
+        <li><span>Based in</span><span>Adelaide, SA (ACST)</span></li>
+        <li><span>Focus</span><span>Platform &amp; integration engineering</span></li>
+        <li><span>Experience</span><span>~6.5 years commercial</span></li>
+        <li><span>Education</span><span>B.CompSci (Software Dev), Swinburne</span></li>
+        <li><span>Certification</span><span>Google IT Support Professional</span></li>
+        <li><span>Languages</span><span>English, Mandarin, Malay</span></li>
+        <li><span>Looking for</span><span>Senior IC roles, freelance projects</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ol class="roles" reversed>
+      <li class="role now">
+        <header><h3>Senior Platform Analyst &amp; Developer</h3><span class="when">2024 – present</span></header>
+        <p class="org">Flinders University · Education Success Platform team</p>
+        <ul>
+          <li>Built the majority of Canvas Middleware, the Django service that feeds Canvas LMS from CourseLoop, TechnologyOne and SailPoint data delivered via Dell Boomi, and helped set its architecture.</li>
+          <li>Implemented the university's business rules in code, including shared and merged courses and attribute-based cohort auto-enrolment.</li>
+          <li>Act as the team's main subject-matter expert for the middleware: first call for incidents, design questions and changes.</li>
+          <li>Support the wider learning and teaching platform estate, including Canvas, CourseLoop, TechnologyOne, Mahara, Alma and openEquella.</li>
+        </ul>
+      </li>
+      <li class="role">
+        <header><h3>IT Programmer</h3><span class="when">2020 – 2024</span></header>
+        <p class="org">Haese Mathematics</p>
+        <ul>
+          <li>Full-stack development on a Ruby on Rails platform that delivers interactive textbooks, including content, licensing and the reseller API.</li>
+          <li>Built React educational games used alongside the textbooks.</li>
+          <li>Ran IT infrastructure: redesigned the office network, managed endpoints, maintained Zentyal and Ubuntu servers, firewall and VPN, and backup and recovery.</li>
+          <li>Completed the Google IT Support Professional Certificate, sponsored by the company.</li>
+        </ul>
+      </li>
+      <li class="role">
+        <header><h3>Graduate Software Developer</h3><span class="when">Jan – Apr 2020</span></header>
+        <p class="org">Dynamic Creative</p>
+        <ul>
+          <li>Started in customer success and L2 support, then moved into backend development on a Ruby on Rails and React app that generated dynamic-keyword Google Ads and SEO content for Shopify and Magento merchants.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <div class="projects">
+      <article class="proj lead">
+        <h3>Canvas Middleware</h3>
+        <p class="ctx">Flinders University · Integration platform</p>
+        <p>Canvas on its own doesn't know which students belong in which course, how co-taught or merged offerings should combine, or which cohorts to enrol automatically. The middleware holds that knowledge. It ingests course, enrolment and identity data from the university's student, finance and identity systems, applies the university's rules, and keeps Canvas in sync.</p>
+        <p>I wrote most of the codebase and worked through the major design decisions with the team.</p>
+        <ul class="tags"><li>Python</li><li>Django</li><li>Canvas API</li><li>Dell Boomi</li><li>CourseLoop</li><li>TechnologyOne</li><li>SailPoint</li></ul>
+      </article>
+
+      <article class="proj">
+        <span class="status">In development</span>
+        <h3>IGCSE &amp; A-Level mark-scheme grader</h3>
+        <p class="ctx">Side project · EdTech</p>
+        <p>A tool that grades exam answers against official mark schemes, aimed first at teachers marking mock papers in bulk. Handwritten scripts come in through a photo capture step, with the OCR result shown so it can be checked and corrected before grading.</p>
+        <ul class="tags"><li>LLM grading</li><li>OCR</li><li>Product design</li></ul>
+      </article>
+
+      <article class="proj">
+        <h3>Interactive textbook platform</h3>
+        <p class="ctx">Haese Mathematics</p>
+        <p>The Rails platform behind the publisher's digital textbooks: content delivery, licence management, and an API that lets resellers provision access for schools.</p>
+        <ul class="tags"><li>Ruby on Rails</li><li>REST API</li><li>Licensing</li></ul>
+      </article>
+
+      <article class="proj">
+        <h3>Maths learning games</h3>
+        <p class="ctx">Haese Mathematics</p>
+        <p>React games that sit alongside the textbooks, giving students a hands-on way to practise the concepts in each chapter.</p>
+        <ul class="tags"><li>React</li><li>JavaScript</li></ul>
+      </article>
+
+      <article class="proj">
+        <h3>Office network &amp; server rebuild</h3>
+        <p class="ctx">Haese Mathematics</p>
+        <p>Redesigned the company network, brought endpoints under management, and set up Zentyal and Ubuntu servers with firewall, VPN, and a backup and recovery process that could actually be restored from.</p>
+        <ul class="tags"><li>Networking</li><li>Linux</li><li>Zentyal</li><li>VPN</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div><h3>Languages &amp; frameworks</h3><ul><li>Python, Django</li><li>Ruby, Rails</li><li>JavaScript, React</li><li>SQL</li></ul></div>
+      <div><h3>Integration</h3><ul><li>REST APIs</li><li>Canvas LMS API</li><li>Dell Boomi</li><li>Data sync &amp; reconciliation</li></ul></div>
+      <div><h3>Edtech platforms</h3><ul><li>Canvas LMS</li><li>CourseLoop</li><li>TechnologyOne</li><li>Mahara, Alma, openEquella</li></ul></div>
+      <div><h3>Infrastructure</h3><ul><li>Linux (Ubuntu)</li><li>Networking, firewall, VPN</li><li>Backup &amp; recovery</li><li>Endpoint management</li></ul></div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="contact">
+      <div>
+        <h2>Let's talk</h2>
+        <p>I'm interested in senior individual contributor roles (remote friendly) and freelance work. I'm a good fit for systems integration, Django or Rails back ends, and edtech platforms, especially anything involving Canvas LMS.</p>
+        <a class="btn" href="mailto:you@example.com">Email me</a>
+      </div>
+      <ul>
+        <li><span>Email</span><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/your-handle">linkedin.com/in/your-handle</a></li>
+        <li><span>GitHub</span><a href="https://github.com/your-handle">github.com/your-handle</a></li>
+        <li><span>Location</span><span style="opacity:1">Adelaide, Australia</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="yr">2026</span> John Ng</span>
+    <span>Built as a single HTML page.</span>
+  </footer>
+</div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
