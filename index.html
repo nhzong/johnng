@@ -52,8 +52,8 @@ a:hover{color:var(--seal)}
 .hero h1{font-size:clamp(44px,8vw,88px);line-height:.95;font-weight:800;letter-spacing:-.035em;margin:0}
 .hero p.lede{font-size:clamp(19px,2.4vw,23px);line-height:1.45;max-width:34ch;margin:22px 0 0;color:var(--ink)}
 .hero p.where{color:var(--slate);margin:12px 0 0;font-size:15px}
-.seal{width:150px;height:150px;background:var(--seal);color:#fff;display:grid;place-items:center;border-radius:10px;font:700 104px/1 var(--han);box-shadow:inset 0 0 0 5px var(--seal),inset 0 0 0 8px rgba(255,255,255,.85);transform:rotate(-3deg)}
-@media (max-width:700px){.hero{grid-template-columns:1fr}.seal{width:96px;height:96px;font-size:66px;order:-1}}
+.photo{width:180px;height:180px;object-fit:cover;border-radius:12px;border:4px solid var(--seal);display:block}
+@media (max-width:700px){.hero{grid-template-columns:1fr}.photo{width:110px;height:110px;order:-1}}
 
 /* integration diagram */
 .flow{margin:28px 0 0;background:var(--panel);border:1px solid var(--rule);border-radius:14px;padding:22px 22px 14px}
@@ -149,7 +149,7 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
       <p class="lede">I build the integrations and platform code that keep a university's learning systems talking to each other.</p>
       <p class="where">Senior platform developer in Adelaide, South Australia. Open to remote roles and freelance work.</p>
     </div>
-    <div class="seal" role="img" aria-label="吴, the Chinese character for Ng">吴</div>
+    <img class="photo" src="john-ng.png" alt="John Ng" width="180" height="180">
   </header>
 
   <figure class="flow">
