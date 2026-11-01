@@ -123,6 +123,9 @@ section > h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;line-height:1.
 .contact li span{opacity:.7;font-size:15px}
 .contact a{color:var(--paper);font-weight:500;overflow-wrap:anywhere}
 .contact a:hover{color:#fff}
+.contact .offer{margin:0 0 1em;padding-left:1.1em}
+.contact .offer li{margin:0 0 .5em;max-width:52ch;opacity:.9}
+.contact .offer li::marker{color:var(--seal)}
 .btn{display:inline-block;margin-top:8px;background:var(--seal);color:#fff !important;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:700}
 .btn:hover{filter:brightness(1.1)}
 @media (max-width:760px){.contact{grid-template-columns:1fr;padding:32px 22px;gap:24px}}
@@ -147,7 +150,7 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
     <div>
       <h1>John Ng</h1>
       <p class="lede">I build the integrations and platform code that keep a university's learning systems talking to each other.</p>
-      <p class="where">Senior software engineer in Adelaide, South Australia. Open to freelance work.</p>
+      <p class="where">Senior software engineer in Adelaide, South Australia. Available for freenlance and contract projects.</p>
     </div>
     <img class="photo" src="john-ng.png" alt="John Ng" width="180" height="180">
   </header>
@@ -191,7 +194,7 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
         <li><span>Education</span><span>B.CompSci (Software Dev), Swinburne University of Technology</span></li>
         <li><span>Certification</span><span>Google IT Support Professional, ITIL v5</span></li>
         <li><span>Languages</span><span>English, Mandarin, Malay</span></li>
-        <li><span>Looking for</span><span>Freelance projects</span></li>
+        <li><span>Looking for</span><span>Freelance &amp; contract projects</span></li>
       </ul>
     </div>
   </section>
@@ -252,9 +255,9 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
 
       <article class="proj">
         <h3>Thermal processing simulator</h3>
-        <p class="ctx">Side project · Software Leadership</p>
-        <p>A tool thatmodels optimal processing temperatures from a set of initial parameters, and lets users adjust inputs and see the model respond.</p>
-        <ul class="tags"><li>Django</li><li>Operation support</li><li>Product design</li></ul>
+        <p class="ctx">Client project · Software Leadership</p>
+        <p>A tool that models optimal processing temperatures from a set of initial parameters, and lets users adjust inputs and see the model respond.</p>
+        <ul class="tags"><li>Django</li><li>Simulation modelling</li><li>Product design</li></ul>
       </article>
 
       <article class="proj">
@@ -294,7 +297,13 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
     <div class="contact">
       <div>
         <h2>Let's talk</h2>
-        <p>I'm interested in freelance work. I'm a good fit for systems integration, Django or Rails back ends, and edtech platforms, especially anything involving Canvas LMS.</p>
+        <p>I take on a small number of freelance projects alongside my role at Flinders. I can help with:</p>
+        <ul class="offer">
+          <li><strong>Business websites:</strong> fast, clean sites that are easy for you to keep up to date.</li>
+          <li><strong>Going digital:</strong> replacing spreadsheets, paper forms and manual processes with simple tools that save time.</li>
+          <li><strong>Complex software:</strong> custom systems, integrations between the tools you already use, and simulations or data-heavy applications.</li>
+        </ul>
+        <p>Tell me what you're trying to solve and I'll tell you honestly whether I'm the right fit.</p>
         <a class="btn" href="mailto:hanzongng@gmail.com">Email me</a>
       </div>
       <ul>
@@ -308,7 +317,7 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
 
   <footer>
     <span>© <span id="yr">2026</span> John (Han Zong) Ng</span>
-    <span>Built by hand.</span>
+    <span>Built as a single HTML page</span>
   </footer>
 </div>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
