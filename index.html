@@ -81,6 +81,15 @@ section > h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;line-height:1.
 .facts span:first-child{color:var(--slate)}
 .facts span:last-child{text-align:right}
 
+/* services */
+.services-intro{margin:0 0 24px;max-width:62ch;color:var(--slate)}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:760px){.services{grid-template-columns:1fr}}
+.services article{border-top:4px solid var(--seal);background:var(--panel);border-radius:0 0 12px 12px;padding:22px 22px 18px}
+.services h3{margin:0 0 8px;font-size:20px;letter-spacing:-.01em}
+.services p{margin:0;font-size:16px}
+.services-cta{margin:24px 0 0;font-weight:700}
+
 /* experience timeline */
 .roles{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule);margin-left:6px}
 .role{position:relative;padding:0 0 44px 32px}
@@ -123,9 +132,6 @@ section > h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;line-height:1.
 .contact li span{opacity:.7;font-size:15px}
 .contact a{color:var(--paper);font-weight:500;overflow-wrap:anywhere}
 .contact a:hover{color:#fff}
-.contact .offer{margin:0 0 1em;padding-left:1.1em}
-.contact .offer li{display:list-item;padding:0;border:0;margin:0 0 .5em;max-width:52ch;opacity:.9}
-.contact .offer li::marker{color:var(--seal)}
 .btn{display:inline-block;margin-top:8px;background:var(--seal);color:#fff !important;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:700}
 .btn:hover{filter:brightness(1.1)}
 @media (max-width:760px){.contact{grid-template-columns:1fr;padding:32px 22px;gap:24px}}
@@ -140,6 +146,7 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
     <a href="#top" class="mini-seal" aria-label="John Ng, back to top" style="text-decoration:none;color:#fff">吴</a>
     <nav aria-label="Sections">
       <a href="#about">About</a>
+      <a href="#services">Services</a>
       <a href="#experience">Experience</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
@@ -197,6 +204,26 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
         <li><span>Looking for</span><span>Freelance &amp; contract projects</span></li>
       </ul>
     </div>
+  </section>
+
+  <section id="services">
+    <h2>How I can help</h2>
+    <p class="services-intro">I take on a small number of freelance projects alongside my role at Flinders.</p>
+    <div class="services">
+      <article>
+        <h3>Business websites</h3>
+        <p>Fast, clean sites that work well on phones and are easy for you to keep up to date.</p>
+      </article>
+      <article>
+        <h3>Going digital</h3>
+        <p>Replacing spreadsheets, paper forms and manual processes with simple tools that save your team time.</p>
+      </article>
+      <article>
+        <h3>Complex software</h3>
+        <p>Custom systems, integrations between the tools you already use, and simulations or data-heavy applications.</p>
+      </article>
+    </div>
+    <p class="services-cta"><a href="#contact">Tell me about your project</a></p>
   </section>
 
   <section id="experience">
@@ -297,13 +324,7 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
     <div class="contact">
       <div>
         <h2>Let's talk</h2>
-        <p>I take on a small number of freelance projects alongside my role at Flinders. I can help with:</p>
-        <ul class="offer">
-          <li><strong>Business websites:</strong> fast, clean sites that are easy for you to keep up to date.</li>
-          <li><strong>Going digital:</strong> replacing spreadsheets, paper forms and manual processes with simple tools that save time.</li>
-          <li><strong>Complex software:</strong> custom systems, integrations between the tools you already use, and simulations or data-heavy applications.</li>
-        </ul>
-        <p>Tell me what you're trying to solve and I'll tell you honestly whether I'm the right fit.</p>
+        <p>Have a project in mind? Tell me what you're trying to solve and I'll tell you honestly whether I'm the right fit.</p>
         <a class="btn" href="mailto:hanzongng@gmail.com">Email me</a>
       </div>
       <ul>
