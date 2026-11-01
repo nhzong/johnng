@@ -61,9 +61,9 @@ a:hover{color:var(--seal)}
 .flow svg{width:100%;height:auto;display:block}
 .flow .node rect{fill:var(--paper);stroke:var(--rule)}
 .flow .node text{fill:var(--ink);font:500 15px var(--font)}
-.flow .node.core rect{fill:var(--ink);stroke:var(--ink)}
-.flow .node.core text{fill:var(--paper);font-weight:700}
-.flow .node.dest rect{fill:none;stroke:var(--seal);stroke-width:2}
+.flow .node.core rect{fill:var(--seal);stroke:var(--seal)}
+.flow .node.core text{fill:#fff;font-weight:700}
+.flow .node.dest rect{fill:none;stroke:var(--ink);stroke-width:2}
 .flow .wire{fill:none;stroke:var(--wire);stroke-width:1.5}
 .flow .pulse{fill:none;stroke:var(--seal);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:14 400;stroke-dashoffset:414;animation:run 3.2s cubic-bezier(.5,0,.5,1) infinite}
 .flow .pulse.d2{animation-delay:.35s}.flow .pulse.d3{animation-delay:.7s}
@@ -173,7 +173,7 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
       <g class="node core"><rect x="520" y="94" width="220" height="62" rx="10"/><text x="630" y="131" text-anchor="middle">Canvas Middleware</text></g>
       <g class="node dest"><rect x="820" y="102" width="130" height="46" rx="8"/><text x="885" y="131" text-anchor="middle">Canvas LMS</text></g>
     </svg>
-    <figcaption>The pipeline I spend most of my days in at Flinders University. The dark box is the part I built.</figcaption>
+    <figcaption>The pipeline I spend most of my days in at Flinders University. The red box is the part I built.</figcaption>
   </figure>
 
   <section id="about">
@@ -210,6 +210,15 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
           <li>Completed the ITIL v5 Certificate, sponsored by the university.</li>
         </ul>
       </li>
+      <li class="role now">
+        <header><h3>Contract Developer</h3><span class="when">2023 – present · part-time</span></header>
+        <p class="org">Software Leadership · Adelaide IT consultancy</p>
+        <ul>
+          <li>Built a thermal processing simulator for a food manufacturing client of the firm, working directly with the director.</li>
+          <li>The tool models optimal processing temperatures from a set of initial parameters, and lets users adjust inputs and see the model respond.</li>
+          <li>Continue to support and extend the product as the client's needs change.</li>
+        </ul>
+      </li>
       <li class="role">
         <header><h3>IT Programmer</h3><span class="when">2020 – 2024</span></header>
         <p class="org">Haese Mathematics</p>
@@ -242,9 +251,9 @@ footer{padding:36px 0 48px;color:var(--slate);font-size:14px;display:flex;justif
       </article>
 
       <article class="proj">
-        <h3>Food processing simulator</h3>
+        <h3>Thermal processing simulator</h3>
         <p class="ctx">Side project · Software Leadership</p>
-        <p>A tool that takes in initial parameters and determine the optimal values to aids making decision for food processing machinery.</p>
+        <p>A tool thatmodels optimal processing temperatures from a set of initial parameters, and lets users adjust inputs and see the model respond.</p>
         <ul class="tags"><li>Django</li><li>Operation support</li><li>Product design</li></ul>
       </article>
 
